@@ -21,7 +21,7 @@ public class UserService {
         int cnt = userMapperRepository.signUp(dto);
         String flag = "false";
 
-        if(cnt > 0) {   2
+        if(cnt > 0) {
             flag = "signUp >>>>>>>>>>>>>>>>>>>>>>>";
         }
         return flag;
@@ -32,6 +32,5 @@ public class UserService {
         String userNick = dto.getUser_nick();
         return userNick;
     }
-
 
 }
