@@ -22,4 +22,5 @@ public class WikiDTO {
     private String wiki_lang;
     private LocalDate wiki_com_date;
 
+    private String user_nick;
 }
