@@ -59,7 +59,7 @@ return wikiService.wikiUpdate(dto);
     @GetMapping("/delete")
 public int wikiDelete(@RequestParam("wiki_pno") int wiki_pno){
 
-return WikiService.WikiDelete(wiki_pno);
+    return wikiService.WikiDelete(wiki_pno);
     } // wikiDelete
 
 } // class
