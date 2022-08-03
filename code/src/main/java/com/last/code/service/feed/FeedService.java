@@ -1,9 +1,12 @@
-package com.last.code.service;
+package com.last.code.service.feed;
 
-import com.last.code.model.FeedDTO;
-import com.last.code.repository.FeedMapperRepository;
+import com.last.code.model.feed.FeedDTO;
+import com.last.code.repository.feed.FeedMapperRepository;
+import org.apache.ibatis.annotations.ResultMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
 
 @Service
 public class FeedService {
@@ -12,6 +15,7 @@ public class FeedService {
     private FeedMapperRepository repository;
 
     public int writeFeed(FeedDTO dto) {
+
         return repository.writeFeed(dto);
     }
 

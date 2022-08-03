@@ -1,17 +1,21 @@
-package com.last.code.repository;
+package com.last.code.repository.feed;
 
-import com.last.code.model.FeedDTO;
+import com.last.code.model.feed.FeedDTO;
 import org.apache.ibatis.annotations.*;
+
+import java.util.HashMap;
 
 @Mapper
 public interface FeedMapperRepository {
 
-    @Insert("insert into tbl_feed(feed_pno, feed_content, feed_user_fno, feed_file, feed_alt) values(seq_feed.nextval, #{feed_content}, #{feed_user_fno}, #{feed_file}, #{feed_alt})")
-    int writeFeed(FeedDTO dto);
 
+    @SelectKey(statement = "select last_insert_id()", keyProperty = "feed_pno", before = false, resultType = int.class)
+    @Insert("insert into tbl_feed(feed_pno, feed_content, feed_user_fno) values(seq_feed.nextval, #{feed_content}, #{feed_user_fno})")
+    int writeFeed(FeedDTO dto);
 
     @Delete("delete from tbl_feed where feed_pno = #{feed_pno}")
     int deleteFeed(int feed_pno);
+
 
     @Select("select * from tbl_feed where feed_pno = #{feed_pno}")
     FeedDTO feedDetail(int feed_pno);

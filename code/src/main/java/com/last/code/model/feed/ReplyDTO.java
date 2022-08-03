@@ -1,4 +1,4 @@
-package com.last.code.model;
+package com.last.code.model.feed;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,5 +18,6 @@ public class ReplyDTO {
     private LocalDate reply_date;
     private int reply_feed_fno;
     private String reply_content;
+    private String reply_user_nick;
 
 }
